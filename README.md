@@ -45,6 +45,12 @@ To drop into a shell:
 
     ./docker-env sh
 
+
+If you want completion you can use the bitcoin source repo as your working directory and use a path to these scripts:
+
+    cd ../bitcoin
+    ../docker-env ls src
+
 Run
 ---------------------
 
@@ -52,4 +58,5 @@ The build outputs a dynamically linked program. It can be run from the container
 
     ./docker-env ./src/bitcoind -disablewallet
 
+TODO: create a Dockerfile for running the binary once built.
 

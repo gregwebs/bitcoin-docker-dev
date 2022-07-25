@@ -11,7 +11,7 @@ BDB_PREFIX="${BDB_PREFIX:-"$bitcoin_src/db4"}"
 
 DOCKER_ARGS=${DOCKER_ARGS:-""}
 
-docker run $DOCKER_ARGS --rm -it \
+docker run $DOCKER_ARGS --rm -it --init \
   -u "$(id -u):$(id -g)"  \
   -v "$(pwd):$(pwd)" -w "$(pwd)" \
   -v "$HOME/.bitcoin:$HOME/.bitcoin" \
