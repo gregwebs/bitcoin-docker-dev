@@ -4,7 +4,7 @@ set -euo pipefail
 
 cd "$(dirname "$0")"
 
-IMAGE_NAME=${IMAGE_NAME:-"bitcoin-builder"}
+IMAGE_NAME=${IMAGE_NAME:-"bitcoin-build"}
 grep -e "^$(whoami)" /etc/group  > group
 grep -e "^$(whoami)" /etc/passwd > passwd
 docker build . -t "${IMAGE_NAME}" "$@"

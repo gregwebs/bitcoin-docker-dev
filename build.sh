@@ -16,6 +16,8 @@ if ! command -v just ; then
 fi
 
 cd $BITCOIN_SRC
+BITCOIN_SRC="$(pwd)"
+export BITCOIN_SRC
 
 just -f $this_dir/Justfile build-image
 just -f $this_dir/Justfile setup "${SETUP_OPTS:-""}"
