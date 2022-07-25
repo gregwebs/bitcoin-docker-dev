@@ -6,14 +6,13 @@ RUN apk update && apk --no-cache add \
   automake \
   boost-dev \
   build-base \
-  db-c++ \
-  db-dev \
   file \
   g++ \
   libevent-dev \
   libressl \
   libtool \
-  make
+  make \
+  qt5-qtbase-dev
 
 # These dependencies are needed at runtime
 # Even though this is alpine we are not yet producing a statically linked output
@@ -36,3 +35,4 @@ RUN apk update && \
 
 COPY group /etc/group
 COPY passwd /etc/passwd
+

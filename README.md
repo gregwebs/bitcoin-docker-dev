@@ -29,12 +29,12 @@ Build
 
     ./build.sh
 
-Configuring can be done with `CONFIGURE_OPTS`. Currently the Berkeley DB code isn't getting included properly
+Configuring can be done with `CONFIGURE_OPTS`.
 
     CONFIGURE_OPTS="--disable-wallet" ./build.sh
 
 `./docker-env` runs a command in the docker build environment.
-To rebuild without re-configuring, run
+For example, to rebuild without re-doing setup steps and configuring, run
 
     ./docker-env make
 
