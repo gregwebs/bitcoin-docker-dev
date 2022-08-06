@@ -9,10 +9,12 @@ this_dir=$(pwd)
 
 # Install Just
 if ! command -v just ; then
-  echo "downloading the just command runner to ."
-  curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to ./
-  chmod +x ./just
-  PATH="$PATH:./$this_dir"
+  if ! test -f just ; then
+    echo "downloading the just command runner to ."
+    curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to ./
+    chmod +x ./just
+  fi
+  PATH="$PATH:$this_dir"
 fi
 
 cd $BITCOIN_SRC
